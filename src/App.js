@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
+import data from "./components/data"
+import Card from  "./components/Card"
 
 function App() {
+  const dataJSX = data.map(elem=>
+       <Card {...elem} />
+    )
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+     <header className='header'>
+       <img className='header-logo' src="/assets/images/Fill213.png" alt='logo'/>
+       <h4 className='header-text'>Travel Journal</h4>
+     </header>
+     <div className="cards">
+      {dataJSX}
+     </div>
+   </>
   );
 }
 
